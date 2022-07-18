@@ -4,6 +4,7 @@ import Homepage from './pages/Homepage';
 import Nav from './pages/Nav';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
+import Footer from './pages/Footer';
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 				<Route path="/shop" element={<Shop />} /> 
         <Route path="/cart" element={<Cart />} />
 			</Routes>
+      <Footer/>
 		</main>
 	);
 }
