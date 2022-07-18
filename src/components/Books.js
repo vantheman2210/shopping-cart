@@ -8,7 +8,7 @@ const Books = () => {
 	}, []);
 
 	const fetchBooks = async () => {
-		const data = await fetch('https://www.googleapis.com/books/v1/volumes?q=subject:adventure&maxResults=10');
+		const data = await fetch('https://www.googleapis.com/books/v1/volumes?q=subject:motivation&maxResults=10');
 
 		const response = await data.json();
 		setBooks(response.items);
@@ -17,11 +17,12 @@ const Books = () => {
 	};
 
 	return (
-		<div>
+		<div className="book-container">
 			{books.map((book) => {
 				return (
-					<div key={book.id}>
+					<div key={book.id} className="book">
 						<img
+							className="bookCover"
 							src={
 								book.volumeInfo.imageLinks === undefined ? (
 									''
@@ -29,10 +30,13 @@ const Books = () => {
 									`${book.volumeInfo.imageLinks.thumbnail}`
 								)
 							}
+							alt="book cover"
 						/>
-						<p>{book.volumeInfo.title}</p>
-						<p>by {book.volumeInfo.authors}</p>
-						<p>Publisher: {book.volumeInfo.publisher}</p>
+						<div className="bookInfo">
+							<p>{book.volumeInfo.title}</p>
+							<p>by {book.volumeInfo.authors}</p>
+							<p>Publisher: {book.volumeInfo.publisher}</p>
+						</div>
 					</div>
 				);
 			})}
