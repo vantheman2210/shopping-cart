@@ -1,10 +1,10 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import Homepage from './pages/Homepage';
-import Nav from './pages/Nav';
+import Nav from './components/Nav';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
-import Footer from './pages/Footer';
+import Footer from './components/Footer';
 
 function App() {
 	return (
