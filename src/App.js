@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
 import Footer from './components/Footer';
+import BookPage from './pages/BookPage';
 
 function App() {
 	return (
@@ -13,8 +14,9 @@ function App() {
 			<Routes>
 				<Route path="/" exact element={<Homepage />} />
 				<Route path="/home" element={<Homepage />} />
-				<Route path="/shop" element={<Shop />} /> 
-        <Route path="/cart" element={<Cart />} />
+				<Route exact path="/shop" element={<Shop />} /> 
+				<Route path="/shop/:id" element={<BookPage />} /> 
+        <Route path="/cart" element={<Cart />} /> 
 			</Routes>
       <Footer/>
 		</main>

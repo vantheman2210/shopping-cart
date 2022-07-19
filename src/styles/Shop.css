@@ -15,4 +15,16 @@
 .bookCover { 
   max-width: 128px;
   max-height: 200px;
+} 
+
+.bookInfo { 
+  display: flex; 
+  flex-direction: column;
+  height: fit-content;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.bookInfo > p { 
+  margin: 0;
 }
