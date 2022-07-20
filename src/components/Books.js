@@ -1,29 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../AppContext'
 const Books = () => {
-	const [ books, setBooks ] = useState([]);
-
-	useEffect(() => {
-		fetchBooks();
-	}, []);
-
-	const fetchBooks = async () => {
-		const data = await fetch('https://www.googleapis.com/books/v1/volumes?q=subject:motivation&maxResults=20');
-
-		const response = await data.json();
-		setBooks(response.items);
-
-		console.log(response);
-	}; 
-
-  const price = () => { 
-    return ((Math.random() * 29.99 ) + 1.99).toFixed(2);
-  }
+	
+const [books, setBooks] = useContext(AppContext);
 
 	const onClick = (e) => { 
-		console.log(books[e.target.id]['id'])
-		console.log(books[e.target.id]);
+		console.log('clicked')
 	}
+
+	const price = () => { 
+    return ((Math.random() * 29.99 ) + 1.99).toFixed(2) + "$";
+  }
+
+
 
 	return (
 		<div className="book-container">
@@ -47,11 +37,11 @@ const Books = () => {
 							<p>{book.volumeInfo.title}</p>
 							<p>by {book.volumeInfo.authors}</p>
 							<p>Publisher: {book.volumeInfo.publisher}</p>
-              <p>{`${price()}$`}</p>
+              <p className='price'>{price()}</p>
 						</div> 
 						</div>
 						</Link> 
-						<Link to="/cart">
+						<Link to={`/cart/${i}`} state={book}>
 						<button id={i} onClick={onClick}>Add to Cart</button> 
 						</Link>
 						</div> 

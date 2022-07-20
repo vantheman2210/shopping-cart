@@ -1,7 +1,8 @@
 import React from 'react';
 import '../styles/Nav.css';
-import Cart from '../pages/Cart';
+import Cart from './Cart';
 import { Link } from 'react-router-dom';
+import { Provider } from '../AppContext';
 
 const Nav = () => {
 	return (
@@ -14,7 +15,14 @@ const Nav = () => {
 				<Link to="/shop">
 					<li>Shop</li>
 				</Link>
-				<Cart />
+				<div className="dropdown">
+					<button className="dropdownBtn">Cart</button>
+					<div className="dropContent">
+						<Provider>
+							<Cart />
+						</Provider>
+					</div>
+				</div>
 			</ul>
 		</nav>
 	);
