@@ -6,7 +6,7 @@ const BookPage = () => {
   const [book, setBook] = useState({});
   useEffect(() => { 
     fetchBooks()
-    
+    console.log(isbn)
   }, [])
 
   const fetchBooks = async () => {

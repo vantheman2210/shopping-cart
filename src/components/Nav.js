@@ -18,9 +18,9 @@ const Nav = () => {
 				<div className="dropdown">
 					<button className="dropdownBtn">Cart</button>
 					<div className="dropContent">
-						<Provider>
-							<Cart />
-						</Provider>
+						
+						<Cart /> 
+						
 					</div>
 				</div>
 			</ul>

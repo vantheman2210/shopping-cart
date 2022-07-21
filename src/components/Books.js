@@ -1,50 +1,60 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AppContext } from '../AppContext'
+import { AppContext } from '../AppContext';
 const Books = () => {
-	
-const [books, setBooks] = useContext(AppContext);
+	const [ books, setBooks ] = useState([]);
+	const [ cart, setCart ] = useContext(AppContext);
 
-	const onClick = (e) => { 
-		console.log('clicked')
-	}
+	useEffect(() => {
+		fetchBooks();
+	}, []);
 
-	const price = () => { 
-    return ((Math.random() * 29.99 ) + 1.99).toFixed(2) + "$";
-  }
+	const fetchBooks = async () => {
+		const data = await fetch('https://www.googleapis.com/books/v1/volumes?q=subject:motivation&maxResults=20');
 
+		const response = await data.json();
+		setBooks(response.items);
+	};
+	const onClick = (e) => {
+		
+		console.log(e.target.parentNode)
+		setCart([ ...cart, e.target.id ]);
+	};
 
+	const price = () => {
+		return (Math.random() * 29.99 + 1.99).toFixed(2) + '$';
+	};
 
 	return (
 		<div className="book-container">
 			{books.map((book, i) => {
 				return (
-					<div>
-					<Link to={book.volumeInfo.industryIdentifiers[0].identifier}>
-					<div key={book.id} className="book">
-						<img
-							className="bookCover"
-							src={
-								book.volumeInfo.imageLinks === undefined ? (
-									''
-								) : (
-									`${book.volumeInfo.imageLinks.thumbnail}`
-								)
-							}
-							alt="book cover"
-						/>
-						<div className="bookInfo">
-							<p>{book.volumeInfo.title}</p>
-							<p>by {book.volumeInfo.authors}</p>
-							<p>Publisher: {book.volumeInfo.publisher}</p>
-              <p className='price'>{price()}</p>
-						</div> 
-						</div>
-						</Link> 
-						<Link to={`/cart/${i}`} state={book}>
-						<button id={i} onClick={onClick}>Add to Cart</button> 
+					<div key={book.id}>
+						<Link to={book.volumeInfo.industryIdentifiers[0].identifier}>
+							<div  className="book">
+								<img
+									className="bookCover"
+									src={
+										book.volumeInfo.imageLinks === undefined ? (
+											''
+										) : (
+											`${book.volumeInfo.imageLinks.thumbnail}`
+										)
+									}
+									alt="book cover"
+								/>
+								<div className="bookInfo">
+									<p>{book.volumeInfo.title}</p>
+									<p>by {book.volumeInfo.authors}</p>
+									<p>Publisher: {book.volumeInfo.publisher}</p>
+									<p className="price">{price()}</p>
+								</div>
+							</div>
 						</Link>
-						</div> 
+						<button id={i} onClick={onClick}>
+							Add to Cart
+						</button>
+					</div>
 				);
 			})}
 		</div>

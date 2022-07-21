@@ -3,25 +3,18 @@ import React, {useState, createContext, useEffect} from "react";
 export const AppContext = createContext();
 
 export const Provider = (props) => { 
-  const [ books, setBooks ] = useState([]);
+  
+	const [cart, setCart] = useState([]);
 
-	useEffect(() => {
-		fetchBooks();
-
-	}, []);;
-
-	const fetchBooks = async () => {
-		const data = await fetch('https://www.googleapis.com/books/v1/volumes?q=subject:motivation&maxResults=20');
-
-		const response = await data.json();
-		setBooks(response.items);
-
-	}; 
+	useEffect(() => { 
+		console.log(cart)
+	}, [cart])
+ 
 
   
 
   return (
-    <AppContext.Provider value={[books, setBooks]}>
+    <AppContext.Provider value={[cart, setCart]}>
       {props.children}
     </AppContext.Provider>
   )
