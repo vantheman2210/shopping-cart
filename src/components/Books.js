@@ -7,12 +7,9 @@ const Books = () => {
 
 	useEffect(() => {
 		fetchBooks();
-		
 	}, []);
 
-	useEffect(() => { 
-		console.log(books)
-	}, [books])
+	useEffect(() => {}, [ books ]);
 
 	const fetchBooks = async () => {
 		const data = await fetch('data.json');
@@ -23,17 +20,19 @@ const Books = () => {
 
 	const onClick = (e) => {
 		const bookId = parseInt(e.target.id) + 1;
-		console.log(bookId)
+
 		const bookDuplicate = cart.find((book) => {
 			if (book.id === bookId) {
 				book.quantity += 1;
+				setCart([ ...cart ]);
 				return true;
 			}
 			return false;
 		});
 
 		if (!bookDuplicate) {
-			setCart([...cart, books[e.target.id]]);
+			books[e.target.id].quantity = 1;
+			setCart([ ...cart, books[e.target.id] ]);
 		}
 	};
 
