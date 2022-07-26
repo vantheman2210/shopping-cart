@@ -9,7 +9,7 @@ export const Provider = (props) => {
 	useEffect(
 		() => {
 			totalPrice();
-			quantityUpdate()
+			quantityUpdate();
 		},
 		[ cart ]
 	);
@@ -19,18 +19,24 @@ export const Provider = (props) => {
 			console.log(total);
 		},
 		[ total ]
-	); 
+	);
 
-		const quantityUpdate = () => { 
-			const updatedCart = cart.filter(book => book.quantity >= 1); 
-			 cart.find((book) => {
-				if (book.quantity <  1) {
-					setCart([ ...cart, updatedCart ]);
-					return true;
-				}
-				return false;
-			});
-		}
+	const manageQuantity = (e) => {
+		const value = e.target.value;
+		const cartBook = cart[e.target.id];
+		value === '-' ? (cartBook.quantity -= 1) : (cartBook.quantity += 1);
+		setCart([ ...cart ]);
+	};
+
+	const quantityUpdate = () => {
+		const updatedCart = cart.filter((book) => book.quantity >= 1);
+		cart.find((book) => {
+			if (book.quantity < 1) {
+				setCart(updatedCart);
+			}
+			return false;
+		});
+	};
 
 	const totalPrice = () => {
 		const price = cart.map((book) => book.price);
@@ -39,5 +45,5 @@ export const Provider = (props) => {
 		setTotal(totalPrice);
 	};
 
-	return <AppContext.Provider value={[ cart, setCart, total ]}>{props.children}</AppContext.Provider>;
+	return <AppContext.Provider value={[ cart, setCart, total, manageQuantity ]}>{props.children}</AppContext.Provider>;
 };

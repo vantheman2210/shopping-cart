@@ -1,15 +1,8 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../AppContext';
 
 const Checkout = () => {
-	const [ cart, setCart, total ] = useContext(AppContext);
-
-	useEffect(
-		() => {
-			console.log(cart);
-		},
-		[ cart ]
-	);
+	const [ cart, setCart, total, manageQuantity ] = useContext(AppContext);
 
 	return (
 		<div>
@@ -17,11 +10,20 @@ const Checkout = () => {
 				return (
 					<div key={i}>
 						<p>{product.title}</p>
-						<p>Quantity:
-							<span>-</span>
+						<p>
+							Quantity:
+							<span>
+								<button id={i} onClick={manageQuantity} value="-">
+									-
+								</button>
+							</span>
 							{product.quantity}
-							<span>+</span>
-							</p>
+							<span>
+								<button id={i} onClick={manageQuantity} value="+">
+									+
+								</button>
+							</span>
+						</p>
 						<p>{`${product.price}$`}</p>
 					</div>
 				);

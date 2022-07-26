@@ -5,7 +5,8 @@
   "publisher": "Penguin",
   "price": 25,
   "bookId": 156, 
-  "quantity": 0
+  "quantity": 0, 
+  "isbn": 9781936891023
 }, {
   "id": 2,
   "title": "Tiny Habits",
@@ -13,7 +14,8 @@
   "publisher": "Penguin",
   "price": 5.00, 
   "bookId": 290, 
-  "quantity": 0
+  "quantity": 0, 
+  "isbn": 9780358003328
 }, {
   "id": 3,
   "title": "The Alter Ego Effect",
@@ -21,7 +23,8 @@
   "publisher": "Penguin",
   "price": 30, 
   "bookId": 398, 
-  "quantity": 0
+  "quantity": 0, 
+  "isbn": 9780062838636
 }, {
   "id": 4,
   "title": "The Lessons of History",
@@ -29,7 +32,8 @@
   "publisher": "Pendant Publishing",
   "price": 12.24, 
   "bookId": 476, 
-  "quantity": 0
+  "quantity": 0, 
+  "isbn": 9781567310245
 }, {
   "id": 5,
   "title": "Meditations",
@@ -37,7 +41,8 @@
   "publisher": "Penguin Classics",
   "price": 6.13, 
   "bookId": 523, 
-  "quantity": 0
+  "quantity": 0, 
+  "isbn": 9780812968255
 }, {
   "id": 6,
   "title": "Will",
@@ -45,7 +50,8 @@
   "publisher": "Pendant Publishing",
   "price": 10.01, 
   "bookId": 676, 
-  "quantity": 0
+  "quantity": 0, 
+  "isbn": 1984877925
 }, {
   "id": 7,
   "title": "The Almanack of Naval Ravikant",
@@ -53,7 +59,8 @@
   "publisher": "Pendant",
   "price": 27.80, 
   "bookId": 755, 
-  "quantity": 0
+  "quantity": 0, 
+  "isbn": 1544514212
 }, {
   "id": 8,
   "title": "The Simple Plan to Wealth",
@@ -61,7 +68,8 @@
   "publisher": "Pendant",
   "price": 13.10, 
   "bookId": 878, 
-  "quantity": 0
+  "quantity": 0, 
+  "isbn": 1533667926
 }, {
   "id": 9,
   "title": "Learn Like A Pro",
@@ -69,13 +77,35 @@
   "publisher": "Pendant",
   "price": 8.31, 
   "bookId": 999, 
-  "quantity": 0
+  "quantity": 0, 
+  "isbn": 9781250799371
 }, {
   "id": 10,
   "title": "Algorithms to Live By",
   "author": "Briand Christian and Tom Griffiths",
-  "publisher": "cthame9@nasa.gov",
+  "publisher": "New Books",
   "price": 7.77, 
   "bookId": 1045, 
-  "quantity": 0
+  "quantity": 0, 
+  "isbn": 9780007547999
+}, 
+{
+  "id": 11,
+  "title": "Gates of Fire",
+  "author": "Steven Pressfield",
+  "publisher": "Doubleday Books",
+  "price": 19.99, 
+  "bookId": 1189, 
+  "quantity": 0, 
+  "isbn": 9780553580532
+}, 
+{
+  "id": 12,
+  "title": "The Midnight Library",
+  "author": "Matt Haig",
+  "publisher": "Canongate Books",
+  "price": 10.99, 
+  "bookId": 12669, 
+  "quantity": 0, 
+  "isbn": 9781786892720
 }]
