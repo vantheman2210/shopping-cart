@@ -6,18 +6,17 @@ const Books = () => {
 	const [ cart, setCart ] = useContext(AppContext);
 
 	useEffect(() => {
-		fetchBooks(); 
-		
+		fetchBooks();
 	}, []);
 
 	useEffect(() => {}, [ books ]);
 
 	const fetchBooks = async () => {
 		const data = await fetch('data.json');
-		
+
 		const response = await data.json();
 		setBooks(response);
-	}; 
+	};
 
 	const onClick = (e) => {
 		const bookId = parseInt(e.target.id) + 1;
@@ -42,9 +41,13 @@ const Books = () => {
 			{books.map((book, i) => {
 				return (
 					<div key={book.id}>
-						<Link to={book.bookId}>
+						<Link to={book.isbn.toString()}>
 							<div className="book">
-								<img className="bookCover" src={`https://covers.openlibrary.org/b/isbn/${book.isbn}.jpg`} alt="book cover" />
+								<img
+									className="bookCover"
+									src={`https://covers.openlibrary.org/b/isbn/${book.isbn}.jpg`}
+									alt="book cover"
+								/>
 								<div className="bookInfo">
 									<p>{book.title}</p>
 									<p>by {book.author}</p>

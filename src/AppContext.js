@@ -9,10 +9,17 @@ export const Provider = (props) => {
 	useEffect(
 		() => {
 			totalPrice();
-			quantityUpdate();
+			quantityUpdate(); 
+			fetchBook();
 		},
 		[ cart ]
 	);
+
+	const fetchBook = async () => { 
+		const data = await fetch(`https://openlibrary.org/isbn/9781936891023.json`); 
+		const response = await data.json()
+		console.log(response)
+	}
 
 	const manageQuantity = (e) => {
 		const value = e.target.value;
