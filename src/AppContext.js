@@ -14,13 +14,6 @@ export const Provider = (props) => {
 		[ cart ]
 	);
 
-	useEffect(
-		() => {
-			console.log(total);
-		},
-		[ total ]
-	);
-
 	const manageQuantity = (e) => {
 		const value = e.target.value;
 		const cartBook = cart[e.target.id];
