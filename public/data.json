@@ -1,0 +1,81 @@
+[{
+  "id": 1,
+  "title": "The War Of Art",
+  "author": "Steven Pressfield",
+  "publisher": "Penguin",
+  "price": 24.39,
+  "bookId": 156, 
+  "quantity": 0
+}, {
+  "id": 2,
+  "title": "Tiny Habits",
+  "author": "Bj Fogg",
+  "publisher": "Penguin",
+  "price": 5.00, 
+  "bookId": 290, 
+  "quantity": 0
+}, {
+  "id": 3,
+  "title": "The Alter Ego Effect",
+  "author": "Todd Herman",
+  "publisher": "Penguin",
+  "price": 25.26, 
+  "bookId": 398, 
+  "quantity": 0
+}, {
+  "id": 4,
+  "title": "The Lessons of History",
+  "author": "Will & Ariel Durant",
+  "publisher": "Pendant Publishing",
+  "price": 12.24, 
+  "bookId": 476, 
+  "quantity": 0
+}, {
+  "id": 5,
+  "title": "Meditations",
+  "author": "Marcus Aurelius",
+  "publisher": "Penguin Classics",
+  "price": 6.13, 
+  "bookId": 523, 
+  "quantity": 0
+}, {
+  "id": 6,
+  "title": "Will",
+  "author": "Mark Manson",
+  "publisher": "Pendant Publishing",
+  "price": 10.01, 
+  "bookId": 676, 
+  "quantity": 0
+}, {
+  "id": 7,
+  "title": "The Almanack of Naval Ravikant",
+  "author": "Eric Jorgensen",
+  "publisher": "Pendant",
+  "price": 27.80, 
+  "bookId": 755, 
+  "quantity": 0
+}, {
+  "id": 8,
+  "title": "The Simple Plan to Wealth",
+  "author": "JL Collins",
+  "publisher": "Pendant",
+  "price": 13.10, 
+  "bookId": 878, 
+  "quantity": 0
+}, {
+  "id": 9,
+  "title": "Learn Like A Pro",
+  "author": "Barbara Oakley",
+  "publisher": "Pendant",
+  "price": 8.31, 
+  "bookId": 999, 
+  "quantity": 0
+}, {
+  "id": 10,
+  "title": "Algorithms to Live By",
+  "author": "Briand Christian and Tom Griffiths",
+  "publisher": "cthame9@nasa.gov",
+  "price": 7.77, 
+  "bookId": 1045, 
+  "quantity": 0
+}]
