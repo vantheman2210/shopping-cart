@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../AppContext';
 import { Link } from 'react-router-dom';
+import  '../styles/Cart.css'
 
 const Cart = () => {
 	const [ cart, setCart, total, manageQuantity ] = useContext(AppContext);
@@ -12,7 +13,7 @@ const Cart = () => {
 	};
 
 	return (
-		<div>
+		<div className='cart-list'>
 			{cart.map((cartBook, i) => {
 				return (
 					<div key={i}>
