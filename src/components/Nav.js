@@ -2,16 +2,13 @@ import React from 'react';
 import '../styles/Nav.css';
 import Cart from './Cart';
 import { Link } from 'react-router-dom';
-import { Provider } from '../AppContext';
+
 
 const Nav = () => {
 	
 	const onClick = () => {
-		const button = document.querySelector('.dropContent');
+		document.querySelector('.dropContent').classList.toggle('show');
 
-		if (button.style.display === 'none') {
-			button.style.display = 'flex';
-		} else button.style.display = 'none';
 	};
 
 	return (

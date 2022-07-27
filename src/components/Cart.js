@@ -12,8 +12,13 @@ const Cart = () => {
 		setCart(newCart);
 	};
 
+	const onClick = () => { 
+		document.querySelector('.dropContent').classList.toggle('show');
+	}
+
 	return (
 		<div className='cart-list'>
+			<h2>Your Shopping Cart</h2>
 			{cart.map((cartBook, i) => {
 				return (
 					<div key={i}>
@@ -38,10 +43,11 @@ const Cart = () => {
 					</div>
 				);
 			})}
-			<div>{total === 0 ? 'Cart Empty' : total.toFixed(2)}</div>
+			<div>Total: {total.toFixed(2)}$</div>
 			<Link to="/checkout">
-				<button>Checkout</button>
-			</Link>
+				<button className='checkout'>CHECKOUT</button> 
+			</Link> 
+			<button onClick={onClick} className="close">CLOSE</button>
 		</div>
 	);
 };
