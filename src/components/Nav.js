@@ -9,14 +9,14 @@ const Nav = () => {
 		<nav className="nav-bar">
 			<div>Bookify</div>
 			<ul className="nav-list">
-				<Link to="/home">
+				<Link to="/home" className='home'>
 					<li>Home</li>
 				</Link>
-				<Link to="/shop">
+				<Link to="/shop" className='shop'>
 					<li>Shop</li>
 				</Link>
 				<div className="dropdown">
-					<button className="dropdownBtn">Cart</button>
+					<div className="dropdownBtn">CART</div>
 					<div className="dropContent">
 						
 						<Cart /> 
