@@ -5,11 +5,13 @@ export const AppContext = createContext();
 export const Provider = (props) => {
 	const [ cart, setCart ] = useState([]);
 	const [ total, setTotal ] = useState(0);
+	const [ quantity, setQuantity ] = useState(0);
 
 	useEffect(
 		() => {
 			totalPrice();
 			quantityUpdate();
+			totalQuantity();
 		},
 		[ cart ]
 	);
@@ -19,6 +21,13 @@ export const Provider = (props) => {
 		const cartBook = cart[e.target.id];
 		value === '-' ? (cartBook.quantity -= 1) : (cartBook.quantity += 1);
 		setCart([ ...cart ]);
+	};
+
+	const totalQuantity = () => {
+		const numberQuantity = cart.map((book) => book.quantity);
+
+		const totalQuantity = numberQuantity.reduce((prev, curr) => prev + curr, 0);
+		setQuantity(totalQuantity);
 	};
 
 	const quantityUpdate = () => {
@@ -38,5 +47,9 @@ export const Provider = (props) => {
 		setTotal(totalPrice);
 	};
 
-	return <AppContext.Provider value={[ cart, setCart, total, manageQuantity ]}>{props.children}</AppContext.Provider>;
+	return (
+		<AppContext.Provider value={[ cart, setCart, total, manageQuantity, quantity ]}>
+			{props.children}
+		</AppContext.Provider>
+	);
 };

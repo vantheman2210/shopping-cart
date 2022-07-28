@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/Nav.css';
 import Cart from './Cart';
 import { Link } from 'react-router-dom';
-
+import { useContext } from 'react';
+import { AppContext } from '../AppContext';
 
 const Nav = () => {
-	
+	const [ cart, setCart, total, manageQuantity, quantity ] = useContext(AppContext);
+
 	const onClick = () => {
 		document.querySelector('.dropContent').classList.toggle('show');
-
 	};
 
 	return (
@@ -23,7 +24,8 @@ const Nav = () => {
 				</Link>
 				<div className="dropdown">
 					<div className="dropdownBtn" onClick={onClick}>
-						CART
+						<img rel="icon" type="image/png" src="../shopping-cart.png" alt="cart icon" />
+						<span className="badge">{quantity}</span>
 					</div>
 					<div className="dropContent">
 						<Cart />
