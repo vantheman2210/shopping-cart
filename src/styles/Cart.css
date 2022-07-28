@@ -13,14 +13,16 @@
 
 .dropdownBtn { 
 	color: white;
+	transition: all 0.5s ease;
 }
 
 .dropdown:hover {
 	display: block;
 }
 
-.dropdown:hover .dropdownBtn {
+.dropdown:hover .dropdownBtn { 
 	color: black;
+  transform: scale(1.2);
 	cursor: pointer;
 }
 
@@ -122,19 +124,16 @@
 }
 
 .checkout:hover {
+	transform: scale(1.2);
   color: rgba(255, 255, 255, 1);
   box-shadow: 0 5px 15px rgb(61, 201, 236, 0.7)
 } 
 
 .close:hover {
+	transform: scale(1.2);
   color: rgba(255, 255, 255, 1);
   box-shadow: 0 5px 15px rgb(241, 141, 141, 0.7)
 }
-
-
-
-
-
 
 @-webkit-keyframes slideIn {
   from {bottom: -300px; opacity: 0} 

@@ -3,42 +3,72 @@
   flex-direction: row;
   gap: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 h1 { 
   text-align: center;
 }
 
+.bookContainer > p { 
+  text-align: center;
+}
+
 .bookCard { 
   display: flex; 
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: hsla(192, 82%, 58%, 0.702);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+  0 2px 2px hsla(192, 82%, 58%, 0.702),
+  0 4px 4px hsla(192, 82%, 58%, 0.702),
+  0 8px 8px hsla(192, 82%, 58%, 0.702),
+  0 16px 16px hsla(192, 82%, 58%, 0.702)
+;
+  transition: all 0.5s ease;         
+}
+
+.bookCard:hover { 
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
 }
 
 .addToCart { 
   width: fit-content;
   height: fit-content;
   cursor: pointer;
-  background: rgb(61, 201, 236, 0.7);
-  color: white;
+  background: #FC6E51;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  color: black;
   padding: 0.5rem; 
+  margin-top: 0.5rem;
   font-weight: bold;
   letter-spacing: 1px;
-  transition: background-color 0.8s ease;
+  transition: all 0.8s ease;
+  border: 0px solid black;
+  border-radius: 8px;
 }
 
 .addToCart:hover { 
-  background: #FC6E51;
+  background: white;
+  transform: scale(1.1);
 }
-
+/*#3cc9ecb3*/
 .book { 
   display: flex; 
   flex-direction: column;
+  align-items: center;
   width: 15vh;
-  height: 40vh;
+  height: 36vh;
+  justify-content: space-between;
 }
 
 .bookCover { 
-  max-width: 128px;
+  width: -webkit-fill-available;
   max-height: 200px;
 } 
 

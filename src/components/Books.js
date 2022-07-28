@@ -49,11 +49,11 @@ const Books = () => {
 									alt="book cover"
 								/>
 								<div className="bookInfo">
-									<p>{book.title}</p>
-									<p>by {book.author}</p>
-									<p>Publisher: {book.publisher}</p>
-									<p className="price">{`${book.price}$`}</p>
-								</div>
+								<p>{book.title}</p>
+								<p>by {book.author}</p>
+								
+								<p className="price">{`$${book.price.toFixed(2)}`}</p>
+							</div>
 							</div>
 						</Link>
 						<button className="addToCart" id={i} onClick={onClick}>

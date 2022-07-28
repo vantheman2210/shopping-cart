@@ -1,0 +1,26 @@
+.bookPageContainer{
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  letter-spacing: 1px;
+}
+
+.bookPageContainer > img { 
+  height: 40vw;
+  width: 25vw;
+}
+
+
+.description { 
+  border: none;
+  border-radius: 8px;
+	background-color: #3dc9ec;
+  box-shadow: 0 5px 15px 0 rgb(44 56 58 / 70%);
+  padding: 0.5rem;
+  color: black;
+  text-align: justify;
+  text-indent: 1rem;
+  line-height: 25px;
+}

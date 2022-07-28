@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import '../styles/BookPage.css';
 
 const BookPage = () => {
 	const isbn = useParams();
@@ -19,13 +20,20 @@ const BookPage = () => {
 
 	if (book.volumeInfo !== undefined) {
 		return (
-			<div>
+			<div className="bookPageContainer">
 				<img src={`https://covers.openlibrary.org/b/isbn/${isbn.id}-M.jpg`} alt="Book cover" />
-				<p>Author: {book.volumeInfo.authors[0]}</p>
-				<p>Pages: {book.volumeInfo.pageCount}</p>
-				<div>
-					Description:
-					<p>{book.volumeInfo.description}</p>
+				<p>
+					<strong>Author:</strong> {book.volumeInfo.authors[0]}
+				</p>
+				<p>
+					<strong>Publisher:</strong> {book.volumeInfo.publisher}
+				</p>
+				<p>
+					<strong>Pages:</strong> {book.volumeInfo.pageCount}
+				</p>
+				<div className="description">
+					<strong>Description:</strong>
+					<p className="description-text">{book.volumeInfo.description}</p>
 				</div>
 			</div>
 		);
