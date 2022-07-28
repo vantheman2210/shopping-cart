@@ -5,6 +5,31 @@
   flex-wrap: wrap;
 }
 
+h1 { 
+  text-align: center;
+}
+
+.bookCard { 
+  display: flex; 
+  flex-direction: column;
+}
+
+.addToCart { 
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+  background: rgb(61, 201, 236, 0.7);
+  color: white;
+  padding: 0.5rem; 
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.8s ease;
+}
+
+.addToCart:hover { 
+  background: #FC6E51;
+}
+
 .book { 
   display: flex; 
   flex-direction: column;

@@ -3,9 +3,12 @@
 	src: url(../Fonts/Roboto/Roboto-Bold.ttf);
 }
 
+
 .dropdown {
 	position: relative;
 	display: inline-block;
+	width: 80px;
+  text-align: center;
 }
 
 .dropdownBtn { 
@@ -21,6 +24,23 @@
 	cursor: pointer;
 }
 
+
+.cartContainer { 
+	display: flex; 
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+  gap: 3rem;
+	height: 8rem;
+	width: 15rem;
+	border-bottom: 0.1px solid black;
+	
+} 
+
+.cartCover { 
+	height: 5rem;
+	width: 3rem;
+} 
 
 .dropContent {
 	display: none; /* Hidden by default */
@@ -51,6 +71,33 @@
 	padding: 2rem;
 	gap: 1rem;
 }
+
+.bookCards { 
+	display: flex; 
+	flex-direction: column;
+	align-items: center; 
+	justify-content: center;
+	width: 10rem;
+}
+
+.bookCards > button { 
+	background-color: rgb(241, 141, 141);
+	border: none;
+	border-radius: 8px;
+	margin-top: 1rem;
+}
+
+.bookCards > p { 
+	height: fit-content; 
+	margin: 0;
+}
+
+.quantity { 
+	display: flex; 
+	flex-direction: row;
+	gap: 0.5rem
+}
+
 
 .checkout { 
 	font-family: 'Roboto-Bold', sans-serif;
@@ -83,6 +130,11 @@
   color: rgba(255, 255, 255, 1);
   box-shadow: 0 5px 15px rgb(241, 141, 141, 0.7)
 }
+
+
+
+
+
 
 @-webkit-keyframes slideIn {
   from {bottom: -300px; opacity: 0} 

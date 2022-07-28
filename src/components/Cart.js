@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../AppContext';
 import { Link } from 'react-router-dom';
-import  '../styles/Cart.css'
+import '../styles/Cart.css';
 
 const Cart = () => {
 	const [ cart, setCart, total, manageQuantity ] = useContext(AppContext);
@@ -12,42 +12,57 @@ const Cart = () => {
 		setCart(newCart);
 	};
 
-	const onClick = () => { 
+	const onClick = () => {
 		document.querySelector('.dropContent').classList.toggle('show');
-	}
+	};
 
 	return (
-		<div className='cart-list'>
+		<div className="cart-list">
 			<h2>Your Shopping Cart</h2>
 			{cart.map((cartBook, i) => {
 				return (
-					<div key={i}>
-						<p>{cartBook.title}</p>
-						<p>
-							Quantity:
-							<span>
-								<button id={i} onClick={manageQuantity} value="-">
-									-
+					<div className="cartContainer">
+						<img
+							className="cartCover"
+							src={`https://covers.openlibrary.org/b/isbn/${cartBook.isbn}-S.jpg`}
+							alt="book cover"
+						/>
+						<div key={i}>
+							<div className="bookCards">
+								<p>
+									{cartBook.title}
+									<br />
+									<p>${cartBook.price.toFixed(2)}</p>
+								</p>
+
+								<div className="quantity">
+									<span>
+										<button id={i} onClick={manageQuantity} value="-">
+											-
+										</button>
+									</span>
+									{cartBook.quantity}
+									<span>
+										<button id={i} onClick={manageQuantity} value="+">
+											+
+										</button>
+									</span>
+								</div>
+								<button id={cartBook.id} onClick={deleteBook}>
+									Remove
 								</button>
-							</span>
-							{cartBook.quantity}
-							<span>
-								<button id={i} onClick={manageQuantity} value="+">
-									+
-								</button>
-							</span>
-						</p>
-						<button id={cartBook.id} onClick={deleteBook}>
-							Remove
-						</button>
+							</div>
+						</div>
 					</div>
 				);
 			})}
-			<div>Total: {total.toFixed(2)}$</div>
+			<p>Total: ${total.toFixed(2)}</p>
 			<Link to="/checkout">
-				<button className='checkout'>CHECKOUT</button> 
-			</Link> 
-			<button onClick={onClick} className="close">CLOSE</button>
+				<button className="checkout">CHECKOUT</button>
+			</Link>
+			<button onClick={onClick} className="close">
+				CLOSE
+			</button>
 		</div>
 	);
 };

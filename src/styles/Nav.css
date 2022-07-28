@@ -8,14 +8,15 @@
 
 .nav-list {
 	display: flex;
-	padding: 0 2rem 0 2rem;
 	flex-direction: row;
-	gap: 2rem;
+	gap: 1rem;
 	list-style: none;
 	list-style-type: none;
 	align-items: center; 
 	background-color: #3dc9ec;;
 	border-radius: 8px;
+	padding-left:0;
+	justify-content: center;
 } 
 
 .nav-list .animation {
@@ -40,16 +41,17 @@
   color: white;
   cursor: pointer;
 	border-radius: 8px;
+	width: 80px;
 } 
 
-a:nth-child(1):hover { 
-	width: 100px;
-	background-color: #1abc9c;
+.home:hover { 
+	color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px rgb(61, 201, 236, 0.7)
 } 
 
 .shop:hover { 
-	width: 100px;
-	background-color: #1abc9c;
+	color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px rgb(61, 201, 236, 0.7)
 }
 
 

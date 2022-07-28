@@ -40,7 +40,7 @@ const Books = () => {
 		<div className="book-container">
 			{books.map((book, i) => {
 				return (
-					<div key={book.id}>
+					<div key={book.id} className="bookCard">
 						<Link to={book.isbn.toString()}>
 							<div className="book">
 								<img
@@ -56,8 +56,8 @@ const Books = () => {
 								</div>
 							</div>
 						</Link>
-						<button id={i} onClick={onClick}>
-							Add to Cart
+						<button className="addToCart" id={i} onClick={onClick}>
+							ADD TO CART
 						</button>
 					</div>
 				);
