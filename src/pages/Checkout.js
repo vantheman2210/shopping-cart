@@ -1,14 +1,27 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../AppContext';
+import  '../styles/Checkout.css'
+import { useParams } from 'react-router-dom';
 
 const Checkout = () => {
 	const [ cart, setCart, total, manageQuantity ] = useContext(AppContext);
+	const data = useParams();
 
+	useEffect(() => { 
+		console.log(cart);
+	}, [data])
 	return (
-		<div>
+		<div className="checkoutContainer">
+			
 			{cart.map((product, i) => {
 				return (
-					<div key={i}>
+					<main className="checkoutMain">
+					<img
+							className="checkoutCover"
+							src={`https://covers.openlibrary.org/b/isbn/${product.isbn}-M.jpg`}
+							alt="book cover"
+						/>
+					<div key={i} className="checkoutInfo">
 						<p>{product.title}</p>
 						<p>
 							Quantity:
@@ -26,9 +39,10 @@ const Checkout = () => {
 						</p>
 						<p>{`${product.price}$`}</p>
 					</div>
+					</main>
 				);
 			})}
-			<div>Total: {`${total.toFixed(2)}$`}</div>
+			<div className="checkoutTotal">Total: {`${total.toFixed(2)}$`}</div>
 		</div>
 	);
 };

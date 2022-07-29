@@ -14,7 +14,9 @@ const Nav = () => {
 
 	return (
 		<nav className="nav-bar">
-			<div>Bookify</div>
+			<div className="logoContainer">
+			<p className="logo">Bookify</p>
+			</div>
 			<ul className="nav-list">
 				<Link to="/home" className="home">
 					<li>Home</li>
